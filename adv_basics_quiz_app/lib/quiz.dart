@@ -1,4 +1,4 @@
-import 'package:adv_basics_quiz_app/questions.dart';
+import 'package:adv_basics_quiz_app/questions_screen.dart';
 import 'package:adv_basics_quiz_app/start_screen.dart';
 import 'package:flutter/material.dart';
 
