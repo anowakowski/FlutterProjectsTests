@@ -12,7 +12,13 @@ class Expensess extends StatefulWidget {
 class _ExpensessState extends State<Expensess> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return const Scaffold(
+      body: Column(
+        children: [
+          Text('The Chart'),
+          Text('Expenses list')
+        ],
+      ),
+    );
   }
 }
