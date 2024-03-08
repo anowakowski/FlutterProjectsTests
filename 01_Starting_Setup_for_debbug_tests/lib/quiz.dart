@@ -56,6 +56,8 @@ class _QuizState extends State<Quiz> {
         chosenAnswers: _selectedAnswers,
         onRestart: restartQuiz,
       );
+
+      _selectedAnswers = [];
     }
 
     return MaterialApp(
