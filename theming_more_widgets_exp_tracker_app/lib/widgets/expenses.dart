@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'package:theming_more_widgets_exp_tracker_app/widgets/chart/chart.dart';
 import 'package:theming_more_widgets_exp_tracker_app/widgets/expenses_list/expenses_list.dart';
 import 'package:theming_more_widgets_exp_tracker_app/models/expense.dart';
 import 'package:theming_more_widgets_exp_tracker_app/widgets/new_expense.dart';
@@ -66,7 +68,7 @@ class _ExpensesState extends State<Expenses> {
       ),
       body: Column(
         children: [          
-          const Text('The Chart'),
+          Chart(expenses: _registeredExpensess),
           Expanded(child: mainContent)
         ],
       ),
