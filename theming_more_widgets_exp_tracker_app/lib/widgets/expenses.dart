@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import 'package:theming_more_widgets_exp_tracker_app/widgets/chart/chart.dart';
 import 'package:theming_more_widgets_exp_tracker_app/widgets/expenses_list/expenses_list.dart';
@@ -53,6 +54,8 @@ class _ExpensesState extends State<Expenses> {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+
     Widget mainContent = const Center(child: Text("No Expenses found, adding some!"));
 
     if (_registeredExpensess.isNotEmpty) {
@@ -66,10 +69,18 @@ class _ExpensesState extends State<Expenses> {
           IconButton(onPressed: _openAddExpenseOverlay, icon: const Icon(Icons.add))
         ],
       ),
-      body: Column(
-        children: [          
-          Chart(expenses: _registeredExpensess),
-          Expanded(child: mainContent)
+      body: width < 600 
+        ? Column(
+          children: [          
+            Chart(expenses: _registeredExpensess),
+            Expanded(child: mainContent)
+          ],
+        ) : Row(
+        children: [
+          Expanded(
+            child: Chart(expenses: _registeredExpensess)
+          ),
+          Expanded(child: mainContent)          
         ],
       ),
     );
