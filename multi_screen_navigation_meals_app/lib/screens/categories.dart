@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:multi_screen_navigation_meals_app/data/dummy_data.dart';
+import 'package:multi_screen_navigation_meals_app/widgets/cateogry_grid_item.dart';
+
 class CategoiresScreen extends StatelessWidget {
   const CategoiresScreen({super.key});
 
@@ -16,9 +19,9 @@ class CategoiresScreen extends StatelessWidget {
           crossAxisSpacing: 20,
           mainAxisSpacing: 20
         ),
-        children: const [
-          Text('1', style: TextStyle(color: Colors.white)),
-          Text('2', style: TextStyle(color: Colors.white))
+        children: [
+          for (final category in availableCategories)
+            CategoryGridItem(category: category)
         ],
       ),
     );
