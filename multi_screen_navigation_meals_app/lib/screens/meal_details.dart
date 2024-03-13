@@ -1,19 +1,25 @@
-
-
 import 'package:flutter/material.dart';
 
 import 'package:multi_screen_navigation_meals_app/models/meal.dart';
 
-class MealDetails extends StatelessWidget {
-  const MealDetails({super.key, required this.meal});
+class MealDetailsScreen extends StatelessWidget {
+  const MealDetailsScreen({super.key, required this.meal, required this.onTaggleFav});
 
   final Meal meal;
+  final void Function(Meal meal) onTaggleFav;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(meal.title),
+        actions: [
+          IconButton(
+            onPressed: () {
+              onTaggleFav(meal);
+            }, 
+            icon: const Icon(Icons.star))
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
