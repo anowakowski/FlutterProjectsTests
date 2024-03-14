@@ -39,7 +39,7 @@ class _TabsScreen extends State<TabsScreen> {
     Widget activePage = CategoiresScreen(onTaggleFav: _toggleMealFavStatus,);
     var activePageTitle = 'Categories';
     if (_selectedPageIndex == 1) {
-      activePage = MealsScreen(meals: [], onTaggleFav: _toggleMealFavStatus,);
+      activePage = MealsScreen(meals: _favMeals, onTaggleFav: _toggleMealFavStatus,);
       activePageTitle = 'Your favorities';
     }
 
