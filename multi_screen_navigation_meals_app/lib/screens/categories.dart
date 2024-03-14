@@ -7,11 +7,12 @@ import 'package:multi_screen_navigation_meals_app/screens/meals.dart';
 import 'package:multi_screen_navigation_meals_app/widgets/cateogry_grid_item.dart';
 
 class CategoiresScreen extends StatelessWidget {
-  const CategoiresScreen({super.key, required this.onTaggleFav});
+  const CategoiresScreen({super.key, required this.onTaggleFav, required this.availbleMeals});
   final void Function(Meal meal) onTaggleFav;
+  final List<Meal> availbleMeals;
 
   void _selectCategory(BuildContext context, Category category) {
-    final meals = dummyMeals.where((meal) => meal.categories.contains(category.id)).toList();
+    final meals = availbleMeals.where((meal) => meal.categories.contains(category.id)).toList();
     MaterialPageRoute materialPageRoute = MaterialPageRoute(
       builder: (ctx) => 
         MealsScreen(
